@@ -15,4 +15,11 @@ describe('should handle simple cases', () => {
         expect(dirReduc(["EAST", "WEST"])).toEqual([]);
         expect(dirReduc(["WEST", "EAST"])).toEqual([]);
     });
+
+    it('should cancel out multiple opposing directions', () => {
+        expect(dirReduc(["NORTH", "SOUTH", "WEST", "EAST"])).toEqual([]);
+        expect(dirReduc(["SOUTH", "NORTH", "EAST", "WEST"])).toEqual([]);
+        expect(dirReduc(["EAST", "WEST", "NORTH", "SOUTH",])).toEqual([]);
+        expect(dirReduc(["WEST", "EAST", "SOUTH", "NORTH"])).toEqual([]);
+    });
 });
