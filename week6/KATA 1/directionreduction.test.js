@@ -21,5 +21,11 @@ describe('should handle simple cases', () => {
         expect(dirReduc(["SOUTH", "NORTH", "EAST", "WEST"])).toEqual([]);
         expect(dirReduc(["EAST", "WEST", "NORTH", "SOUTH",])).toEqual([]);
         expect(dirReduc(["WEST", "EAST", "SOUTH", "NORTH"])).toEqual([]);
+        expect(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"])).toEqual([]);
     });
+
+    it('should keep the directions if it cannot be reduced', () => {
+        expect(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"])).toEqual(["NORTH", "WEST", "SOUTH", "EAST"]);
+        expect(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])).toEqual(["WEST"]);
+    })
 });
