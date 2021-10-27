@@ -8,4 +8,8 @@ describe('should handle simple cases', () => {
     it('should return one direction when input array has one direction', () => {
         expect(dirReduc(['NORTH'])).toEqual(['NORTH']);
     });
+
+    it('should cancel out opposing directions', () => {
+        expect(dirReduc(['NORTH', 'SOUTH'])).toEqual([]);
+    });
 });
