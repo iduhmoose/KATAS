@@ -14,3 +14,4 @@ Goal: The system could be run in BOT mode to print on the screen all player's mo
 
 ## Tech Debt (Refactored Code)
 * Only use the string to print to the console. For the actual gameboard, store an internal 2D array.
+* Track all strings representing each step in the game, in an array
