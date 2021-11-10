@@ -28,7 +28,7 @@ function tictactoe() {
     gameStatus = "";
 
     // Loop for 2 game rounds
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
         //Game begins
         let move = randomIndex();
         // Rechoose index if it has already been marked

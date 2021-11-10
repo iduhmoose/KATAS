@@ -23,6 +23,6 @@ describe("Game begins", () => {
     it("should return to player X to choose the next open position", () => {
         let playerXStep = tictactoe()[3];
         expect((playerXStep.match(/X/g) || []).length).toEqual(3);
-        expect((playerXStep.match(/O/g) || []).length).toEqual(2);
+        expect((playerXStep.match(/O/g) || []).length).toEqual(1);
     });
 });
