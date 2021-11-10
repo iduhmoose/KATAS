@@ -41,9 +41,7 @@ function tictactoe() {
         grid = replaceAt(grid, gridMapping[move], player[playerNum % 2]);
         printedGame = round[playerNum % 2] + grid + gameStatus;
         steps.push(printedGame);
-        setTimeout(function() {
-            console.log(printedGame);
-        }, 2000);
+        console.log(printedGame);
         
         // Set the selected position
         gridMapping[move] = player[playerNum % 2];
