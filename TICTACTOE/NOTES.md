@@ -4,6 +4,7 @@ Goal: The system could be run in BOT mode to print on the screen all player's mo
 * Create the game board with no X's and O's
 * Game board has 6 | , 6 - , 4 +
 * The game starts with player X
+* Generate a random x, y coordinate to make a move
 * The game detects a winner
 * The game prints the correct winner
 
