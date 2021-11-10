@@ -15,8 +15,14 @@ describe("Game begins", () => {
     });
 
     it("should allow player O to choose the next open position", () => {
-        let playerXFirstStep = tictactoe()[2];
-        expect(playerXFirstStep).toContain('X');
-        expect(playerXFirstStep).toContain('O');
+        let playerOFirstStep = tictactoe()[2];
+        expect(playerOFirstStep).toContain('X');
+        expect(playerOFirstStep).toContain('O');
     });
+
+    // it("should return to player X to choose the next open position", () => {
+    //     let playerXStep = tictactoe()[3];
+    //     expect(playerXStep).toContain('X');
+    //     expect(playerXStep).toContain('O');
+    // });
 });

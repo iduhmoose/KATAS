@@ -39,10 +39,12 @@ function tictactoe() {
 
         // Edit the grid for printing
         grid = replaceAt(grid, gridMapping[move], player[playerNum % 2]);
-        printedGame = round[0] + grid + gameStatus;
+        printedGame = round[playerNum % 2] + grid + gameStatus;
         steps.push(printedGame);
-        console.log(printedGame);
-
+        setTimeout(function() {
+            console.log(printedGame);
+        }, 2000);
+        
         // Set the selected position
         gridMapping[move] = player[playerNum % 2];
         playerNum++;
