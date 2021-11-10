@@ -2,11 +2,10 @@ function tictactoe() {
     let round = "Game Board Creation...\n";
     let grid = " | | \n-+-+-\n | | \n-+-+-\n | | \n";
     let gameStatus = "\nBoard Created.\nThe game will start with player X";
-    let gameboard = round + grid + gameStatus;
+    let printedGame = round + grid + gameStatus;
     let steps = [];
-    let game = [];
 
-    const gridMapping = {
+    let gridMapping = {
         0: 0,
         1: 2,
         2: 4,
@@ -18,23 +17,37 @@ function tictactoe() {
         8: 28
     };
 
-    steps.push(gameboard);
+    steps.push(printedGame);
 
     // Game board creation
     console.log(steps[0]);
 
+    playerNum = 0;
+    player = ["X", "O"];
     round = ["Player X:\n", "Player O:\n"];
     gameStatus = "";
 
-    //Game begins
-    let move = randomIndex();
-    game[move] = 'X';
+    // Loop for 2 game rounds
+    for (let i = 0; i < 2; i++) {
+        //Game begins
+        let move = randomIndex();
+        // Rechoose index if it has already been marked
+        while (typeof gridMapping[move] == "string") {
+            move = randomIndex();
+        }
+        //console.log(move);
 
-    grid = replaceAt(grid, gridMapping[move], "X");
-    gameboard = round[0] + grid + gameStatus;
-    steps.push(gameboard);
+        // Edit the grid for printing
+        grid = replaceAt(grid, gridMapping[move], player[playerNum % 2]);
+        printedGame = round[0] + grid + gameStatus;
+        steps.push(printedGame);
+        console.log(printedGame);
 
-    console.log(steps[1]);
+        // Set the selected position
+        gridMapping[move] = player[playerNum % 2];
+        playerNum++;
+    }
+    
     return steps;
 }
 
